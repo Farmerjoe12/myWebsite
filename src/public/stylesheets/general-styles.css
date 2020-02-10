@@ -74,6 +74,7 @@ body {
 textarea {
     resize: none;
     height: 100px;
+    font-size: 80%;
 }
 
 #form-submit {
