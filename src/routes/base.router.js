@@ -1,6 +1,8 @@
 const express = require('express')
 let router = express.Router();
 
+require('../services/email.service');
+
 // Home page
 router.get("/", function(req, res) {
     res.render("home", {
@@ -38,13 +40,13 @@ router.get("/blog", function(req, res)  {
 
 // Form submission
 router.post("/form", function(req, res) {
+
+    // TODO: Delegate into a controller / service?
     let name = req.body.name;
     let email = req.body.email;
     let comments = req.body.comments;
 
-    console.log(name + " just submitted a form!")
-    console.log("They said: " + comments)
-    console.log("Respond at " + email)
+    sendEmailFromForm(name, email, comments);
 
     res.status(200).redirect('back');
 });
