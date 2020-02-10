@@ -1,0 +1,28 @@
+<div id='sidebar'>    
+    <div id='contact-form'>
+        <form action='/form' id='sidebar-form' {{  form-hidden }} method="POST">
+            <fieldset>
+                <h3>{{ form-header }}</h3>
+                <p style='font-weight:bold'>{{ form-description }}</p>
+                <div class='form-group'>
+                    <label>Name:</label>
+                    <input type='text' name='name' required placeholder='Your Name Here' />
+                </div>
+
+                <div class='form-group'>
+                    <label>Email:</label>
+                    <input type='text' name='email' required placeholder='something@somedomain.com' />
+                </div>
+
+                <div class='form-group'>
+                    <label>Comments:</label>
+                    <textarea form='sidebar-form' name='comments' placeholder='Have anything else to say?'></textarea>
+                </div>
+
+                <div id='form-submit' class='form-group'>
+                    <input type='submit' value='Send it!' />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
