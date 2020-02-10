@@ -2,9 +2,8 @@ var express = require("express");
 var handlebars = require("express-handlebars");
 var path = require("path");
 
-const PORT = 8080;
-
 let baseRouter = require('./routes/base.router');
+const config = require('./config/config');
 
 // set up the engine
 var app = express();
@@ -31,4 +30,4 @@ app.use(express.urlencoded());
 app.use('/', baseRouter);
 
 // start the server
-app.listen(PORT, () => console.log(`Express server running on ${PORT}`));
+app.listen(global.gConfig.node_port, () => console.log(`Express server running on ${global.gConfig.node_port}`));
